@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from icecream import ic
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-
+# 找到本地的 env
 load_dotenv()  # read local .env file
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
@@ -50,7 +50,7 @@ def get_completion(
             model=model,
             temperature=temperature,
             top_p=1,
-            response_format={"type": "json_object"},
+            response_format={"type": "json_object"}, # 多了这一句 json object
             messages=[
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": prompt},
@@ -70,6 +70,7 @@ def get_completion(
         return response.choices[0].message.content
 
 
+# 第一次翻译
 def one_chunk_initial_translation(
     source_lang: str, target_lang: str, source_text: str
 ) -> str:
@@ -100,6 +101,7 @@ Do not provide any explanations or text apart from the translation.
     return translation
 
 
+# 提整改意见
 def one_chunk_reflect_on_translation(
     source_lang: str,
     target_lang: str,
@@ -180,7 +182,7 @@ Output only the suggestions and nothing else."""
     reflection = get_completion(prompt, system_message=system_message)
     return reflection
 
-
+# 基于上面提供的改进意见，输出改进后的原文
 def one_chunk_improve_translation(
     source_lang: str,
     target_lang: str,
@@ -237,6 +239,7 @@ Output only the new translation and nothing else."""
     return translation_2
 
 
+# 最终执行的翻译函数，对上面 3 个函数进行编排
 def one_chunk_translate_text(
     source_lang: str, target_lang: str, source_text: str, country: str = ""
 ) -> str:
@@ -259,9 +262,14 @@ def one_chunk_translate_text(
         source_lang, target_lang, source_text
     )
 
+    print("translation_1: " + translation_1)
+
     reflection = one_chunk_reflect_on_translation(
         source_lang, target_lang, source_text, translation_1, country
     )
+
+    print("reflection: " + reflection)
+
     translation_2 = one_chunk_improve_translation(
         source_lang, target_lang, source_text, translation_1, reflection
     )
@@ -269,6 +277,7 @@ def one_chunk_translate_text(
     return translation_2
 
 
+# 计算 tokne 数量
 def num_tokens_in_string(
     input_str: str, encoding_name: str = "cl100k_base"
 ) -> int:
@@ -291,6 +300,7 @@ def num_tokens_in_string(
     """
     encoding = tiktoken.get_encoding(encoding_name)
     num_tokens = len(encoding.encode(input_str))
+    print("num_tokens: " + str(num_tokens))
     return num_tokens
 
 
@@ -672,12 +682,13 @@ def translate(
 
         ic(token_size)
 
+        # 使用 langchain 对数据进行拆分
         text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
             model_name="gpt-4",
             chunk_size=token_size,
             chunk_overlap=0,
         )
-
+        # 使用 langchain 对数据进行拆分
         source_text_chunks = text_splitter.split_text(source_text)
 
         translation_2_chunks = multichunk_translation(

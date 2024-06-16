@@ -1,0 +1,35 @@
+Source text:
+
+Last week, I spoke about AI and regulation at the U.S. Capitol at an event that was attended by legislative and business leaders. I’m encouraged by the progress the open source community has made fending off regulations that would have stifled innovation. But opponents of open source are continuing to shift their arguments, with the latest worries centering on open source's impact on national security. I hope we’ll all keep protecting open source!
+
+Based on my conversations with legislators, I’m encouraged by the progress the U.S. federal government has made getting a realistic grasp of AI’s risks. To be clear, guardrails are needed. But they should be applied to AI applications, not to general-purpose AI technology.
+
+------------
+
+ic| num_tokens_in_text: 142
+
+ic| 'Translating text as single chunk'
+
+translation_1:
+上周，我在美国国会的一次活动中讲述了AI与监管的话题，参加此活动的有立法和商业领袖。我对开源社区在抵御可能会扼杀创新的监管方面取得的进展感到鼓舞。但是，反对开源的人士持续改变他们的论点，最新的担忧集中在开源对国家安全的影响上。我希望我们都能继续保护开源！
+根据我与立法者的对话，我对美国联邦政府在实际掌握AI风险方面取得的进展感到鼓舞。需要明确的是，必须设立防护措施。但这些措施应该针对AI应用，而不是针对通用AI技术。
+
+reflection:
+1. **Accuracy and Terminology**: In the sentence "Last week, I spoke about AI and regulation at the U.S. Capitol at an event that was attended by legislative and business leaders," consider specifying "在美国国会大厦" instead of just "在美国国会" to clarify that the event took place at the Capitol building, not just at the Congress in general. This enhances geographical accuracy.
+2. **Style and Fluency**: The phrase "我对开源社区在抵御可能会扼杀创新的监管方面取得的进展感到鼓舞" can be rephrased for better fluency and to match the conversational tone. Consider "开源社区在防止可能压制创新的监管上取得的进展让我感到振奋" to make the sentence flow more naturally in Chinese.
+3. **Terminology Consistency**: The term "open source" should consistently be translated as "开源". In the translation, ensure that every mention aligns with this terminology to maintain consistency throughout the text.
+4. **Style and Cultural Context**: The phrase "But opponents of open source are continuing to shift their arguments," could be more colloquially expressed as "但是，开源的反对者们却在不断变换他们的论调," which uses a more conversational style typical in Beijing.
+5. **Accuracy and Specificity**: For "with the latest worries centering on open source's impact on national security," consider refining to "最新的担忧则集中于开源可能对国家安全带来的影响," which more directly links the worries to potential impacts, enhancing clarity.
+6. **Fluency and Style**: The sentence "Based on my conversations with legislators, I’m encouraged by the progress the U.S. federal government has made getting a realistic grasp of AI’s risks," could be restructured for better fluency: "从我与立法者的交谈中，我看到了美国联邦政府在实际了解AI风险方面取得的进步，这让我感到鼓舞." This adjustment makes the sentence smoother and more natural in Chinese.
+7. **Clarity and Terminology**: In "To be clear, guardrails are needed," the translation could be more explicit by saying "需要明确的是，我们必须设立相应的安全防护措施," which uses more precise language to emphasize the necessity of safeguards.
+8. **Fluency and Style**: For the closing remark "But they should be applied to AI applications, not to general-purpose AI technology," consider "但应当将这些措施应用于具体的AI应用程序，而非通用AI技术上," which avoids repetition and enhances the readability of the sentence in Chinese.
+
+Translation:
+上周，我在美国国会大厦的一次活动中讲述了AI与监管的话题，参加此活动的有立法和商业领袖。开源社区在防止可能压制创新的监管上取得的进展让我感到振奋。但是，开源的反对者们却在不断变换他们的论调，最新的担忧则集中于开源可能对国家安全带来的影响。我希望我们都能继续保护开源！
+从我与立法者的交谈中，我看到了美国联邦政府在实际了解AI风险方面取得的进步，这让我感到鼓舞。需要明确的是，我们必须设立相应的安全防护措施。但应当将这些措施应用于具体的AI应用程序，而非通用AI技术上。
+
+
+google 翻译：
+上周，我在美国国会大厦的一场活动上谈到了人工智能和监管问题，立法者和商界领袖出席了此次活动。开源社区在抵制可能扼杀创新的监管方面取得了进展，这让我感到鼓舞。但开源的反对者仍在不断改变他们的论点，最近的担忧集中在开源对国家安全的影响上。我希望我们都能继续保护开源！
+
+根据我与立法者的对话，美国联邦政府在切实掌握人工智能风险方面取得了进展，这让我感到鼓舞。需要明确的是，护栏是必要的。但它们应该应用于人工智能应用程序，而不是通用人工智能技术。
